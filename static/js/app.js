@@ -70,7 +70,25 @@ function createChart(tsin) {
     })
 };
 
+// Display the sample metadata, i.e., an individual's demographic information.
+function tsInfo(tsin) {
+    d3.json("samples.json").then((data) => {
+        var individualMetadata = data.metadata.filter(sample => sample.id === tsin)[0];
+        console.log(individualMetadata);
+        var sampleMetadata = d3.select("#sample-metadata");
+        sampleMetadata.html("");
+        Object.entries(individualMetadata).forEach(function ([key, value]) {
+            var row = sampleMetadata.append("tbody");
+            row.text(`${key}: ${value}`);
+        })
+
+    })
+}
+
+
+// Display each key-value pair from the metadata JSON object somewhere on the page.
 
 
 
 
+// Update all of the plots any time that a new sample is selected.
