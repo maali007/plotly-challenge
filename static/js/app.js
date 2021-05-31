@@ -27,45 +27,17 @@ function createChart(tsin) {
 
         var data1 = [trace1];
         var layout1 = {
-            title: "Top 10 OTUs",
+            title: "Top 10 Operational Taxonomic Units",
             margin: {
                 l: 100,
                 r: 100,
                 t: 100,
-                b: 30
+                b: 100
             }
         };
         Plotly.newPlot("bar", data1, layout1);
 
-
-
-
-
-
     // Create a bubble chart that displays each sample.
+        // Use otu_ids for the x values.
+        var bubblelabels = individualSamples.otu_ids;
 
-
-
-// Use otu_ids for the x values.
-
-
-// Use sample_values for the y values.
-
-
-// Use sample_values for the marker size.
-
-
-// Use otu_ids for the marker colors.
-
-
-// Use otu_labels for the text values.
-
-// Display the sample metadata, i.e., an individual's demographic information.
-
-
-// Display each key-value pair from the metadata JSON object somewhere on the page.
-
-
-
-
-// Update all of the plots any time that a new sample is selected.
