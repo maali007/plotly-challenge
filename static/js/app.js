@@ -44,3 +44,6 @@ function createChart(tsin) {
         // Use sample_values for the y values.
         var bubblevalues = individualSamples.sample_values;
 
+        // Use otu_labels for the text values.
+        var bubblehover = individualSamples.otu_labels;
+
