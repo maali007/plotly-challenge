@@ -60,7 +60,7 @@ function drawCharts(tsin) {
         };
         var layoutB = {
             xaxis: {
-                title: "OTU ID"
+                title: "Operational Taxonomic Unit ID"
             },
             height: 600,
             width: 1000
