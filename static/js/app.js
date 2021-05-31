@@ -1,13 +1,13 @@
 // Use the D3 library to read in samples.json.
-function createChart(tsin) {
+function drawCharts(tsin) {
     d3.json("samples.json").then((data) => {
         console.log(data)
 
 
 // Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
     // Filter sample values for by id of selected individual
-        var filteredSample = data.samples.filter(sample => sample.id === tsin)[0];
-        console.log(filteredSample);
+        var individualSamples = data.samples.filter(sample => sample.id === tsin)[0];
+        console.log(individualSamples);
 
         // Use sample_values as the values for the bar chart.
         var barvalues = individualSamples.sample_values.slice(0, 10).reverse();
@@ -90,3 +90,19 @@ function tsChange(tsin) {
     drawCharts(tsin);
     tsInfo(parseInt(tsin));
 }
+
+// Display initial sample charts and metadata
+function initialStuff() {
+    var dropdown = d3.select("#selDataset");
+    // Generate the sample list to populate the select options
+    d3.json("samples.json").then((data) => {
+        data.names.forEach(function(name) {
+            dropdown.append("option").text(name).property("value");
+        });
+        drawCharts(data.names[0]);
+        tsInfo(parseInt(data.names[0]));
+    });
+}
+
+// Initial dashboard view
+initialStuff();
