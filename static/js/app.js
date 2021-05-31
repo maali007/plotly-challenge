@@ -9,3 +9,5 @@ function createChart(tsin) {
         var filteredSample = data.samples.filter(sample => sample.id === tsin)[0];
         console.log(filteredSample);
 
+        // Use sample_values as the values for the bar chart.
+        var barvalues = individualSamples.sample_values.slice(0, 10).reverse();
