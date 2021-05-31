@@ -13,3 +13,12 @@ function createChart(tsin) {
         var barvalues = individualSamples.sample_values.slice(0, 10).reverse();
         // Use otu_ids as the labels for the bar chart.
         var barlabels = individualSamples.otu_ids.map(otuid => `OTU ${otuid}`).slice(0, 10).reverse();
+        // Use otu_labels as the hovertext for the chart.
+        var barhover = individualSamples.otu_labels.slice(0, 10).reverse();
+
+
+
+
+
+
+
