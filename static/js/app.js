@@ -17,7 +17,7 @@ function createChart(tsin) {
         var barhover = individualSamples.otu_labels.slice(0, 10).reverse();
 
         // Define chart parameters.
-        var trace1 = {
+        var traceA = {
             x: barvalues,
             y: barlabels,
             hovertext: barhover,
@@ -25,8 +25,8 @@ function createChart(tsin) {
             orientation: "h",
         };
 
-        var data1 = [trace1];
-        var layout1 = {
+        var chartA = [traceA];
+        var layoutA = {
             title: "Top 10 Operational Taxonomic Units",
             margin: {
                 l: 100,
@@ -35,7 +35,7 @@ function createChart(tsin) {
                 b: 100
             }
         };
-        Plotly.newPlot("bar", data1, layout1);
+        Plotly.newPlot("bar", chartA, layoutA);
 
     // Create a bubble chart that displays each sample.
         // Use otu_ids for the x values.
@@ -46,4 +46,31 @@ function createChart(tsin) {
 
         // Use otu_labels for the text values.
         var bubblehover = individualSamples.otu_labels;
+
+        // Define chart parameters and use sample_values for the marker size while using otu_ids for the marker colors.
+        var traceB = {
+            x: bubblelabels,
+            y: bubblevalues,
+            mode: "markers",
+            marker: {
+                size: bubblevalues,
+                color: bubblelabels
+            },
+            text: bubblehover
+        };
+        var layoutB = {
+            xaxis: {
+                title: "OTU ID"
+            },
+            height: 600,
+            width: 1000
+        };
+        var dataB = [traceB];
+        Plotly.newPlot("bubble", dataB, layoutB);
+    })
+};
+
+
+
+
 
