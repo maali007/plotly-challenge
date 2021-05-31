@@ -85,10 +85,8 @@ function tsInfo(tsin) {
     })
 }
 
-
-// Display each key-value pair from the metadata JSON object somewhere on the page.
-
-
-
-
 // Update all of the plots any time that a new sample is selected.
+function tsChange(tsin) {
+    drawCharts(tsin);
+    tsInfo(parseInt(tsin));
+}
