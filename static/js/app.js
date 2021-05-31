@@ -16,9 +16,56 @@ function createChart(tsin) {
         // Use otu_labels as the hovertext for the chart.
         var barhover = individualSamples.otu_labels.slice(0, 10).reverse();
 
+        // Define chart parameters.
+        var trace1 = {
+            x: barvalues,
+            y: barlabels,
+            hovertext: barhover,
+            type: "bar",
+            orientation: "h",
+        };
+
+        var data1 = [trace1];
+        var layout1 = {
+            title: "Top 10 OTUs",
+            margin: {
+                l: 100,
+                r: 100,
+                t: 100,
+                b: 30
+            }
+        };
+        Plotly.newPlot("bar", data1, layout1);
 
 
 
 
 
 
+    // Create a bubble chart that displays each sample.
+
+
+
+// Use otu_ids for the x values.
+
+
+// Use sample_values for the y values.
+
+
+// Use sample_values for the marker size.
+
+
+// Use otu_ids for the marker colors.
+
+
+// Use otu_labels for the text values.
+
+// Display the sample metadata, i.e., an individual's demographic information.
+
+
+// Display each key-value pair from the metadata JSON object somewhere on the page.
+
+
+
+
+// Update all of the plots any time that a new sample is selected.
