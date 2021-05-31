@@ -11,3 +11,5 @@ function createChart(tsin) {
 
         // Use sample_values as the values for the bar chart.
         var barvalues = individualSamples.sample_values.slice(0, 10).reverse();
+        // Use otu_ids as the labels for the bar chart.
+        var barlabels = individualSamples.otu_ids.map(otuid => `OTU ${otuid}`).slice(0, 10).reverse();
