@@ -41,3 +41,6 @@ function createChart(tsin) {
         // Use otu_ids for the x values.
         var bubblelabels = individualSamples.otu_ids;
 
+        // Use sample_values for the y values.
+        var bubblevalues = individualSamples.sample_values;
+
