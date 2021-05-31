@@ -63,7 +63,7 @@ function drawCharts(tsin) {
                 title: "Operational Taxonomic Unit ID"
             },
             height: 600,
-            width: 1000
+            width: 1200
         };
         var dataB = [traceB];
         Plotly.newPlot("bubble", dataB, layoutB);
